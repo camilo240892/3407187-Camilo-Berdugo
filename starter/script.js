@@ -244,7 +244,7 @@ const init = () => {
   renderItems();
   renderLinks();
   renderStats();
-  console.log('✅ Plataforma agrícola inicializada correctamente');
+  console.log(' Plataforma agrícola inicializada correctamente');
 };
 
 init();
