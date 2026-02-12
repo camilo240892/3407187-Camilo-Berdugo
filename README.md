@@ -1,4 +1,4 @@
-# 🌾 Ficha Interactiva – Frubana | 
+
 
 ## 📋 Información del Proyecto
 

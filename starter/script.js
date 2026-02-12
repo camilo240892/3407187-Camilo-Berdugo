@@ -14,7 +14,7 @@ const entityData = {
 
   contact: {
     email: 'soporte@frubana.com',
-    phone: '+57 1 508 8500',
+    phone: '+57 3182312294',
     location: 'Latinoamérica (Colombia, México, Brasil)'
   },
 
@@ -30,7 +30,7 @@ const entityData = {
   links: [
     { platform: 'Sitio Web', url: 'https://www.frubana.com', icon: '🌐' },
     { platform: 'LinkedIn', url: 'https://www.linkedin.com/company/frubana', icon: '💼' },
-    { platform: 'Instagram', url: 'https://www.instagram.com/frubana', icon: '📸' }
+    { platform: 'Instagram', url: 'https://www.instagram.com/accounts/login/?next=%2Ffrubanacolombia%2F&source=omni_redirect&hl=es-la', icon: '📸' }
   ],
 
   stats: {
