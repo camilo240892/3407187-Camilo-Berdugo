@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgroMarket | Venta Directa del Campo</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="main-header">
+        <div class="container">
+            <div class="logo">
+                <span class="logo-emoji">🌱</span>
+                <h1>AgroMarket</h1>
+            </div>
+            <p class="tagline">Productos frescos directo del agricultor a tu mesa</p>
+        </div>
+    </header>
+
+
+    <main class="container">
+        <!-- Panel de Estadísticas -->
+        <section class="stats-panel">
+            <div class="stat-card">
+                <span class="stat-label">Total Productos</span>
+                <span id="stat-total" class="stat-value">0</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-label">En Oferta</span>
+                <span id="stat-active" class="stat-value">0</span>
+            </div>
+            <div class="stat-card highlight">
+                <span class="stat-label">Valor del Inventario</span>
+                <span id="stat-value" class="stat-value">$0</span>
+            </div>
+            <div class="stat-card wide">
+                <span class="stat-label">Distribución por Categoría</span>
+                <div id="stats-categories" class="stats-categories-list">
+                    <!-- Categorías dinámicas -->
+                </div>
+            </div>
+        </section>
+
+
+        <div class="dashboard-grid">
+            <!-- Formulario -->
+            <aside class="form-container">
+                <div class="card">
+                    <h2 id="form-title">➕ Nuevo Producto</h2>
+                    <form id="product-form">
+                        <div class="form-group">
+                            <label for="name">Nombre del Producto</label>
+                            <input type="text" id="name" name="name" placeholder="Ej. Tomate Chonto" required>
+                        </div>
+                       
+                        <div class="form-group">
+                            <label for="description">Descripción</label>
+                            <textarea id="description" name="description" placeholder="Detalles del producto, procedencia..."></textarea>
+                        </div>
+
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="category">Categoría</label>
+                                <select id="category" name="category">
+                                    <option value="fruit">🍎 Frutas</option>
+                                    <option value="vegetable">🥦 Verduras</option>
+                                    <option value="grain">🌾 Granos</option>
+                                    <option value="dairy">🥛 Lácteos</option>
+                                    <option value="tuber">🥔 Tubérculos</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="priority">Prioridad / Perecedero</label>
+                                <select id="priority" name="priority">
+                                    <option value="high">🔴 Perecedero (Urgente)</option>
+                                    <option value="medium" selected>🟡 Estándar</option>
+                                    <option value="low">🟢 Larga Duración</option>
+                                </select>
+                            </div>
+                        </div>
+
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="price">Precio (Unit)</label>
+                                <input type="number" id="price" name="price" min="0" value="0" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="stock">Stock</label>
+                                <input type="number" id="stock" name="stock" min="0" value="0" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="unit">Unidad</label>
+                                <select id="unit" name="unit">
+                                    <option value="kg">Kilogramos (kg)</option>
+                                    <option value="lb">Libras (lb)</option>
+                                    <option value="und">Unidades (und)</option>
+                                    <option value="lt">Litros (lt)</option>
+                                </select>
+                            </div>
+                        </div>
+
+
+                        <div class="form-actions">
+                            <button type="submit" id="submit-btn" class="btn btn-primary">Añadir Producto</button>
+                            <button type="button" id="cancel-btn" class="btn btn-secondary hidden">Cancelar</button>
+                        </div>
+                    </form>
+                </div>
+            </aside>
+
+
+            <!-- Lista y Filtros -->
+            <section class="inventory-container">
+                <div class="inventory-controls">
+                    <div class="search-bar">
+                        <input type="text" id="search-input" placeholder="Buscar productos por nombre o descripción...">
+                    </div>
+                    <div class="filters-row">
+                        <select id="filter-status">
+                            <option value="all">Todos los Estados</option>
+                            <option value="active">Disponibles</option>
+                            <option value="inactive">Agotados/Pausados</option>
+                        </select>
+                        <select id="filter-category">
+                            <option value="all">Todas las Categorías</option>
+                            <option value="fruit">Frutas</option>
+                            <option value="vegetable">Verduras</option>
+                            <option value="grain">Granos</option>
+                            <option value="dairy">Lácteos</option>
+                            <option value="tuber">Tubérculos</option>
+                        </select>
+                        <select id="filter-priority">
+                            <option value="all">Todas las Prioridades</option>
+                            <option value="high">Perecederos</option>
+                            <option value="medium">Estándar</option>
+                            <option value="low">Larga Duración</option>
+                        </select>
+                        <button id="clear-unavailable" class="btn btn-danger-outline" title="Limpiar no disponibles">🧹 Limpiar</button>
+                    </div>
+                </div>
+
+
+                <div id="product-grid" class="product-grid">
+                    <!-- Los productos se renderizan aquí -->
+                </div>
+
+
+                <div id="empty-state" class="empty-state hidden">
+                    <div class="empty-emoji">🚜</div>
+                    <h3>No se encontraron productos</h3>
+                    <p>Intenta ajustar los filtros o agrega un nuevo producto al inventario.</p>
+                </div>
+            </section>
+        </div>
+    </main>
+
+
+    <footer class="main-footer">
+        <div class="container">
+            <p>&copy; 2024 AgroMarket - Plataforma de Venta Directa Agrícola</p>
+        </div>
+    </footer>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
+    
