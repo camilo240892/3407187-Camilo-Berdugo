@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Plataforma de Venta Directa de Productos Agrícolas</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- HEADER -->
+  <header>
+    <h1>Plataforma de Productos Agrícolas</h1>
+    <div id="stats" class="stats"></div>
+  </header>
+
+  <!-- FORMULARIO DE AGREGAR PRODUCTO -->
+  <section class="form-section">
+    <h2>Agregar Nuevo Producto</h2>
+    <form id="item-form">
+      <label>
+        Nombre:
+        <input type="text" name="name" required>
+      </label>
+      <label>
+        Ubicación:
+        <input type="text" name="location" required>
+      </label>
+      <label>
+        Tipo:
+        <select name="type" required>
+          <option value="">Seleccione</option>
+          <option value="Fruit">Fruta</option>
+          <option value="Vegetable">Verdura</option>
+          <option value="Grain">Grano</option>
+        </select>
+      </label>
+
+      <!-- Campos específicos dinámicos -->
+      <div id="type-specific-fields"></div>
+
+      <button type="submit" class="btn-submit">Agregar Producto</button>
+    </form>
+  </section>
+
+  <!-- FILTROS Y BUSCADOR -->
+  <section class="filter-section">
+    <h2>Filtros y Búsqueda</h2>
+    <label>
+      Filtrar por tipo:
+      <select id="filter-type">
+        <option value="All">Todos</option>
+        <option value="Fruit">Frutas</option>
+        <option value="Vegetable">Verduras</option>
+        <option value="Grain">Granos</option>
+      </select>
+    </label>
+    <label>
+      Filtrar por estado:
+      <select id="filter-status">
+        <option value="All">Todos</option>
+        <option value="Active">Activos</option>
+        <option value="Inactive">Inactivos</option>
+      </select>
+    </label>
+    <label>
+      Buscar:
+      <input type="text" id="search-input" placeholder="Buscar producto">
+    </label>
+  </section>
+
+  <!-- LISTA DE PRODUCTOS -->
+  <section class="list-section">
+    <h2>Productos Registrados</h2>
+    <div id="item-list" class="item-list"></div>
+  </section>
+
+  <!-- JS -->
+  <script src="script.js"></script>
+</body>
+</html>

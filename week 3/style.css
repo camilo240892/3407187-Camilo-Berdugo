@@ -1,0 +1,289 @@
+/* ============================
+   RESET Y ESTILOS BASE
+   ============================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background: linear-gradient(160deg, #f0fff4, #e0f7fa);
+  color: #333;
+  line-height: 1.5;
+  padding: 20px;
+}
+
+/* ============================
+   HEADER
+   ============================ */
+header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  color: #1d4e89;
+  margin-bottom: 15px;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+.stats {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.stats .stat {
+  background: linear-gradient(135deg, #81e6d9, #4fd1c5);
+  color: #0f3c3b;
+  padding: 10px 15px;
+  border-radius: 10px;
+  font-weight: bold;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: 0.3s;
+}
+
+.stats .stat:hover {
+  transform: translateY(-2px);
+}
+
+/* ============================
+   FORMULARIO
+   ============================ */
+form {
+  background-color: #ffffff;
+  padding: 25px 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  margin-bottom: 25px;
+  transition: 0.3s;
+}
+
+form:hover {
+  box-shadow: 0 12px 25px rgba(0,0,0,0.12);
+}
+
+form label {
+  display: block;
+  margin-bottom: 15px;
+  font-weight: 600;
+  color: #1a202c;
+}
+
+form input, form select {
+  width: 100%;
+  padding: 10px 12px;
+  margin-top: 6px;
+  border: 1px solid #a0aec0;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  transition: 0.3s;
+}
+
+form input:focus, form select:focus {
+  border-color: #1d4e89;
+  outline: none;
+  box-shadow: 0 0 8px rgba(29,78,137,0.3);
+}
+
+.btn-submit {
+  background: linear-gradient(90deg, #2c7a7b, #285e61);
+  color: #fff;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-top: 15px;
+  transition: 0.3s;
+}
+
+.btn-submit:hover {
+  background: linear-gradient(90deg, #285e61, #1f4b4b);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+}
+
+/* ============================
+   FILTROS
+   ============================ */
+.filter-section {
+  display: flex;
+  gap: 25px;
+  flex-wrap: wrap;
+  margin-bottom: 25px;
+  background-color: #ffffff;
+  padding: 15px 20px;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.05);
+}
+
+.filter-section label {
+  display: flex;
+  flex-direction: column;
+  font-weight: 500;
+}
+
+.filter-section select, .filter-section input {
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1px solid #a0aec0;
+  transition: 0.3s;
+}
+
+.filter-section select:focus, .filter-section input:focus {
+  border-color: #1d4e89;
+  box-shadow: 0 0 6px rgba(29,78,137,0.2);
+  outline: none;
+}
+
+/* ============================
+   LISTA DE PRODUCTOS
+   ============================ */
+.item-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.item {
+  background: #ffffff;
+  border: 1px solid #cbd5e0;
+  border-radius: 15px;
+  padding: 20px;
+  position: relative;
+  transition: 0.4s;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+}
+
+.item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.12);
+}
+
+.item.inactive {
+  opacity: 0.6;
+}
+
+.item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.item-header h3 {
+  font-size: 1.3rem;
+  color: #2c7a7b;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+.badge {
+  background: linear-gradient(135deg, #f6e05e, #ed8936);
+  color: #1a202c;
+  padding: 4px 8px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: bold;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.15);
+}
+
+.item-details p {
+  font-size: 0.95rem;
+  margin-bottom: 6px;
+}
+
+.item-actions {
+  margin-top: 15px;
+  display: flex;
+  gap: 10px;
+}
+
+.item-actions button {
+  flex: 1;
+  padding: 8px 12px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.btn-toggle {
+  background: linear-gradient(90deg, #38a169, #2f855a);
+  color: #fff;
+}
+
+.btn-toggle:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.12);
+}
+
+.btn-delete {
+  background: linear-gradient(90deg, #e53e3e, #c53030);
+  color: #fff;
+}
+
+.btn-delete:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.12);
+}
+
+/* ============================
+   RESPONSIVE
+   ============================ */
+@media (max-width: 600px) {
+  .filter-section {
+    flex-direction: column;
+  }
+
+  .item-actions {
+    flex-direction: column;
+  }
+}
+.badge, .stat {
+  transition: 0.3s;
+}
+.badge:hover, .stat:hover {
+  background-color: #81e6d9;
+  color: #1a202c;
+}
+:root {
+  --bg-color: #f0fdfa;
+  --text-color: #1a202c;
+  --card-bg: #ffffff;
+  --badge-bg: #38b2ac;
+  --btn-primary: #2c7a7b;
+  --btn-danger: #e53e3e;
+}
+
+[data-theme="dark"] {
+  --bg-color: #1a202c;
+  --text-color: #f0fdfa;
+  --card-bg: #2d3748;
+  --badge-bg: #4fd1c5;
+  --btn-primary: #319795;
+  --btn-danger: #c53030;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+.item {
+  background-color: var(--card-bg);
+}
+.badge {
+  background-color: var(--badge-bg);
+  color: var(--text-color);
+}
+.btn-submit, .btn-toggle {
+  background-color: var(--btn-primary);
+}
+.btn-delete {
+  background-color: var(--btn-danger);
+}
