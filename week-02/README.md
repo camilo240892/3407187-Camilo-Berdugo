@@ -1,110 +1,149 @@
-# 🏛️ Proyecto Semana 1 – Ficha de Presentación de Dominio
+# 🌾 Proyecto Semanal — Semana 02: Ficha de Datos del Dominio
 
-## 📋 Dominio Asignado
-🎯 **Plataforma de venta directa de productos agrícolas**
-
----
-
-## 🎯 Objetivo
-
-Construir un script en **JavaScript** que se ejecute en **Node.js** y muestre en la consola una ficha de presentación de una entidad del dominio asignado.
-
-En este proyecto se aplican los conceptos aprendidos durante la semana:
-
-- Uso de `console.log()`
-- Tipos de datos primitivos:
-  - **string**
-  - **number**
-  - **boolean**
-- Uso de **comentarios en el código**
-- Organización de la salida en consola
+🎯 **ÚNICO ENTREGABLE:** Este proyecto es el entregable obligatorio para aprobar la semana 2 del bootcamp.
 
 ---
 
-## 📄 Descripción
+# 🎯 Objetivo
 
-Este proyecto consiste en crear un script en JavaScript que se ejecuta con Node.js y muestra en la consola una ficha informativa de un producto agrícola dentro de una plataforma de venta.
-
-El objetivo es aplicar los conceptos vistos en la primera semana del bootcamp, utilizando `console.log()`, tipos de datos primitivos y comentarios para organizar la información.
-
-### Información mostrada en la ficha
-
-El script muestra datos básicos de un producto agrícola, como:
-
-- Nombre del producto
-- Código de identificación
-- Categoría
-- Precio del producto
-- Precio con descuento (calculado con una operación aritmética)
-- Estados del producto usando valores booleanos
+Crear una **ficha de datos en consola usando JavaScript** aplicando las variables y tipos de datos aprendidos durante la semana.
 
 ---
 
-## 💡 Ejemplo de salida esperada
-=========================================
-PLATAFORMA DE VENTA DE PRODUCTOS AGRÍCOLAS - FICHA:3407187
+# 📋 Dominio Asignado
 
-INFORMACIÓN GENERAL
+**Plataforma de venta directa de productos agrícolas**
 
-Nombre: Café Orgánico de Nariño
-Código: AGR-001
-Categoría: Café - Producto orgánico
-Estado: Disponible
-
-DETALLES
-
-Valor principal: 25000
-Valor calculado: 22500
-Estado booleano 1: true
-Estado booleano 2: true
-
-RESUMEN DEL DOMINIO
-
-Dominio: Plataforma de venta directa de productos agrícolas
-Entidad: Producto agrícola
-Total registros: 120
-
-=========================================
-Conectando agricultores con consumidores mediante tecnología.
-
-## 🛠️ Tecnologías utilizadas
-
-- JavaScript (ES2023)
-- Node.js
-- Consola del sistema
+Este dominio representa una plataforma digital que conecta **agricultores con consumidores**, permitiendo la venta directa de productos agrícolas sin intermediarios.
 
 ---
 
-## 📁 Estructura del proyecto
-
-
-3-proyecto/
+📦 Estructura del proyecto
+week-02/
 │
 ├── README.md
 │
 └── starter/
     └── script.js
+
+El archivo principal es script.js, donde se desarrolla la lógica del proyecto.
+
 ---
 
-## ▶️ Cómo ejecutar el proyecto
+# ✅ Requisitos funcionales
+
+El script debe mostrar en consola una **ficha de datos del dominio** que incluya:
+
+### 1️⃣ Datos con tipo correcto
+
+El script contiene variables declaradas con `const` utilizando tipos apropiados al dominio:
+
+* **string** → nombre del producto agrícola
+* **number** → cantidad disponible del producto
+* **boolean** → estado de disponibilidad del producto
+* **null** → información aún no asignada (por ejemplo, próxima cosecha o agricultor asignado)
+
+---
+
+### 2️⃣ Verificación de tipos con `typeof`
+
+El programa usa **`typeof`** para verificar el tipo de al menos tres variables.
+
+Ejemplo:
+
+* `typeof itemName`
+* `typeof itemQuantity`
+* `typeof isItemAvailable`
+
+---
+
+### 3️⃣ Conversión explícita de datos
+
+El script realiza una conversión explícita usando:
+
+```id="f55gog"
+String(itemQuantity)
+```
+
+Esto convierte un valor **number** en **string** para mostrarlo como texto en la consola.
+
+---
+
+### 4️⃣ Buena nomenclatura
+
+El código sigue las buenas prácticas de JavaScript:
+
+* Variables en **camelCase**
+* Constantes en **UPPER_SNAKE_CASE**
+* Boolean con prefijo semántico (`isItemAvailable`)
+
+---
+
+### 5️⃣ Uso de números con separadores
+
+Para mejorar la lectura de números grandes se pueden usar separadores `_` en valores numéricos.
+
+Ejemplo:
+
+```id="vkn2xj"
+const itemQuantity = 1_500;
+```
+
+---
+
+# 📊 Ejemplo de salida del programa
+
+```id="udq2eg"
+===========================
+FICHA DE DATOS: Plataforma de venta directa de productos agrícolas
+===========================
+
+Producto:     Café Orgánico de Nariño
+Categoría:    Café - Producto orgánico
+Cantidad:     120
+Disponible:   true
+
+--- Tipos de datos ---
+typeof itemName:        string
+typeof itemQuantity:    number
+typeof isItemAvailable: boolean
+
+--- Conversiones ---
+Cantidad como texto: 120
+typeof convertido: string
+
+--- Valor nulo ---
+Próxima cosecha: null
+typeof null: object
+¿Es null?: true
+
+===========================
+FIN DE FICHA
+===========================
+```
+
+---
+
+# 🛠️ Tecnologías utilizadas
+
+* **JavaScript (ES2023)**
+* **Node.js**
+* **Consola del sistema**
+
+---
+
+# ▶️ Cómo ejecutar el proyecto
 
 1. Abrir la terminal en la carpeta del proyecto.
-2. Ir a la carpeta `starter`.
+2. Ejecutar el script con Node.js:
 
+node week-02/starter/script.js
+```
 
-cd starter
-
-
-3. Ejecutar el script con Node.js.
-
-
-node script.js
-
-
-La consola mostrará la ficha del producto agrícola con la información organizada.
+3. La consola mostrará la **ficha de datos del dominio agrícola**.
 
 ---
 
-## 👨‍💻 Autor
+# 👨‍💻 Autor
 
-David Camilo Berdugo
+**David Camilo Berdugo**
